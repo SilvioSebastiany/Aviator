@@ -8,9 +8,9 @@ Este projeto utiliza o padrão Mediator para organizar a comunicação entre dif
   ```bash
   dotnet new classlib -o Aviator.Domain
   ```
-- **Aviator.Aplication**: Biblioteca de classes para a lógica de aplicação.
+- **Aviator.Application**: Biblioteca de classes para a lógica de aplicação.
   ```bash
-  dotnet new classlib -o Aviator.Aplication
+  dotnet new classlib -o Aviator.Application
   ```
 - **Aviator.Infrastructure**: Biblioteca de classes para a infraestrutura e acesso a dados.
   ```bash
@@ -35,6 +35,25 @@ Este projeto utiliza o padrão Mediator para organizar a comunicação entre dif
    dotnet sln add Aviator.Application
    dotnet sln add Aviator.Infrastructure
 
-3. Crie o arquivo .gitignore para ignorar arquivos desnecessários no controle de versão:
+3. Crie o arquivo `.gitignore`:
    ```bash
    dotnet new gitignore
+   ```
+
+## Referências entre Projetos
+
+- **Aviator.Application** depende de **Aviator.Domain**:
+  ```bash
+  dotnet add Aviator.Application/Aviator.Application.csproj reference Aviator.Domain/Aviator.Domain.csproj
+  ```
+
+- **Aviator.Api** depende de **Aviator.Domain** e **Aviator.Application**:
+  ```bash
+  dotnet add Aviator.Api/Aviator.Api.csproj reference Aviator.Domain/Aviator.Domain.csproj
+  dotnet add Aviator.Api/Aviator.Api.csproj reference Aviator.Application/Aviator.Application.csproj
+  ```
+
+- **Aviator.Infrastructure**: Não referencia nenhum projeto por enquanto.
+- **Aviator.Domain**: Não deve referenciar nenhum outro projeto.
+
+---
