@@ -20,3 +20,21 @@ Este projeto utiliza o padrão Mediator para organizar a comunicação entre dif
   ```bash
   dotnet new web -o Aviator.Api
   ```
+
+
+### Configuração da Solução
+
+1. Crie a solução principal:
+   ```bash
+   dotnet new sln
+
+2. Adicione os projetos à solução:
+   ```bash 
+dotnet sln add Aviator.Api
+dotnet sln add Aviator.Domain
+dotnet sln add Aviator.Application
+dotnet sln add Aviator.Infrastructure
+
+3. Crie o arquivo .gitignore para ignorar arquivos desnecessários no controle de versão:
+   ```bash
+dotnet new gitignore
