@@ -30,11 +30,11 @@ Este projeto utiliza o padrão Mediator para organizar a comunicação entre dif
 
 2. Adicione os projetos à solução:
    ```bash 
-dotnet sln add Aviator.Api
-dotnet sln add Aviator.Domain
-dotnet sln add Aviator.Application
-dotnet sln add Aviator.Infrastructure
+    dotnet sln add Aviator.Api
+    dotnet sln add Aviator.Domain
+    dotnet sln add Aviator.Application
+    dotnet sln add Aviator.Infrastructure
 
 3. Crie o arquivo .gitignore para ignorar arquivos desnecessários no controle de versão:
    ```bash
-dotnet new gitignore
+    dotnet new gitignore
